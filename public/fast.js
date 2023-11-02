@@ -1,0 +1,1 @@
+console.log("fast js ran",document.readyState)
