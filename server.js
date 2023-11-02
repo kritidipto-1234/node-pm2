@@ -6,11 +6,19 @@ const morgan = require("morgan");
 // Define the directory where your static files are located (e.g., "public" folder)
 const staticDir = path.join(__dirname, "public");
 app.use(morgan("dev"));
-app.get("/afterdomload.js", (req, res) => {
-  console.log("Delayed after dom load script")
+app.get("/slow.js", (req, res) => {
+  console.log("Delayed script")
   setTimeout(() => {
-    res.sendFile(path.join(staticDir, "afterdomload.js")); // Replace with the actual file name
-  }, 400); // 2000 milliseconds (2 seconds)
+    res.sendFile(path.join(staticDir, "slow.js")); // Replace with the actual file name
+  }, 1000); // 2000 milliseconds (2 seconds)
+});
+
+app.use(morgan("dev"));
+app.get("/fast.js", (req, res) => {
+  console.log("Fast script")
+  setTimeout(() => {
+    res.sendFile(path.join(staticDir, "fast.js")); // Replace with the actual file name
+  }, 1); // 2000 milliseconds (2 seconds)
 });
 
 // Serve static files from the "public" directory
