@@ -1,0 +1,18 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "sse.js": "^1.0.0"
+  }
+}
