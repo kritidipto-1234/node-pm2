@@ -13,13 +13,12 @@ app.get("/slow.js", (req, res) => {
   }, 1000); // 2000 milliseconds (2 seconds)
 });
 
-app.use(morgan("dev"));
-app.get("/fast.js", (req, res) => {
-  console.log("Fast script")
-  setTimeout(() => {
-    res.sendFile(path.join(staticDir, "fast.js")); // Replace with the actual file name
-  }, 1); // 2000 milliseconds (2 seconds)
-});
+// app.get("/fast.js", (req, res) => {
+//   console.log("Fast script")
+//   setTimeout(() => {
+//     res.sendFile(path.join(staticDir, "fast.js")); // Replace with the actual file name
+//   }, 1); // 2000 milliseconds (2 seconds)
+// });
 
 // Serve static files from the "public" directory
 app.use(express.static(staticDir));
