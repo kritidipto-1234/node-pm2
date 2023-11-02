@@ -7,18 +7,11 @@ const morgan = require("morgan");
 const staticDir = path.join(__dirname, "public");
 app.use(morgan("dev"));
 app.get("/afterdomload.js", (req, res) => {
-  console.log("Delayed async script")
+  console.log("Delayed after dom load script")
   setTimeout(() => {
     res.sendFile(path.join(staticDir, "afterdomload.js")); // Replace with the actual file name
   }, 400); // 2000 milliseconds (2 seconds)
 });
-
-// app.get("/deferscript.js", (req, res) => {
-//   console.log("Delayed defer script")
-//   setTimeout(() => {
-//     res.sendFile(path.join(staticDir, "deferscript.js")); // Replace with the actual file name
-//   }, 20); // 2000 milliseconds (2 seconds)
-// });
 
 // Serve static files from the "public" directory
 app.use(express.static(staticDir));
