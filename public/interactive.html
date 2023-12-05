@@ -22,6 +22,7 @@
   <body>
     All resources loads fast therefoe j.php executes after dom is parsed(mostly)
     Can make changes using custom code(mostly)
+	<button id="btn" type="button">Add element</button>
     <h1>hey</h1>
     <h1>hey</h1>
     <h1>hey</h1>
@@ -41,5 +42,11 @@
     <h1>hey</h1>
     <h1>hey</h1>
     <h1>hey</h1>
+	<script>
+		document.querySelector("#btn").addEventListener('click',function()
+		{
+			this.insertAdjacentHTML('afterend','<h2>added now</h2>')
+		})
+	</script>
   </body>
 </html>
