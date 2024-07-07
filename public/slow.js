@@ -1,1 +1,0 @@
-console.log("slow js ran",document.readyState)
