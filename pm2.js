@@ -12,7 +12,8 @@ cluster.setupPrimary({
 });
 
 for (let i = 0; i < 1; i++) {
-  cluster.fork();
+//   cluster.fork({PORT: 3000 + i});
+  cluster.fork({});
 }
 
 cluster.on("exit", (worker, code, signal) => {
