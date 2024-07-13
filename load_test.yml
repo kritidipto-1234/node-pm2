@@ -1,0 +1,9 @@
+config:
+  target: 'http://127.0.0.1:8080'
+  phases:
+    - duration: 600
+      arrivalRate: 200
+scenarios:
+  - flow:
+    - get:
+        url: "/sum?n=1999999"
